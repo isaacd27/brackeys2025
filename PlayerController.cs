@@ -81,6 +81,7 @@ public class PlayerController: MonoBehaviour
             {
                 if (checkpoint != transform.position)
                 {
+                    AudioManager.playSFX("checkpoint");
                     score -= 50;
                     checkpoint = this.transform.position;
                 }
@@ -123,7 +124,7 @@ public class PlayerController: MonoBehaviour
         // Jump method
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
-            // audioManager.playSFX("Jump");
+            AudioManager.playSFX("Jump");
 
             //may need jumpforce *1000
             //Debug.Log("Boing");
@@ -215,6 +216,7 @@ public class PlayerController: MonoBehaviour
         {
             //play death sfx
             score -= 100;
+            AudioManager.playSFX("Death");
             this.transform.position = checkpoint;
             isFalling = false;
             isGrounded = true;

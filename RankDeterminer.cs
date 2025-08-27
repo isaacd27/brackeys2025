@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
-using UnityEditor.ShaderGraph.Internal;
+
 public class RankDeterminer : MonoBehaviour
 {
 
@@ -165,9 +165,12 @@ public class RankDeterminer : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
+        
             score = player.GetComponent<PlayerController>().getscore();
-            //SceneManager.LoadScene(4);
+            SceneManager.LoadScene(2);
         }
+
+    
         
         //move to finale screen
 
